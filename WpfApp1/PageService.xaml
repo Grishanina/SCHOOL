@@ -1,0 +1,74 @@
+﻿<Page x:Class="WpfApp1.PageService"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp1"
+      mc:Ignorable="d" 
+      d:DesignHeight="550" d:DesignWidth="900"
+      Title="PageService">
+
+    <Grid>
+        <StackPanel>
+            <!--<StackPanel>
+                <GroupBox Header="Поиск" Margin="20,10,20,0">
+                    <TextBox Name="tbSearch" TextChanged="tbSearch_TextChanged" Height="30" FontSize="16"></TextBox>
+                </GroupBox>
+                <StackPanel Orientation="Horizontal">
+                    <GroupBox Header="Сортировка по типу товара" Margin="20, 0, 20 ,0" >
+                        <ComboBox Name="cmbType" SelectionChanged="cmbType_SelectionChanged" Width="250" ></ComboBox>
+                    </GroupBox>
+                    <GroupBox Header="Сортировка по цене товара" Margin="20, 0, 20 ,0" >
+                        <ComboBox Name="cmbSort" SelectionChanged="cmbType_SelectionChanged" Width="250" >
+                            <ComboBoxItem>Без сортировки</ComboBoxItem>
+                            <ComboBoxItem>По MIN</ComboBoxItem>
+                            <ComboBoxItem>По MAX</ComboBoxItem>
+                        </ComboBox>
+                    </GroupBox>
+                    <CheckBox Name="cbPhoto" Checked="cbPhoto_Checked" Unchecked="cbPhoto_Checked" Margin="20, 20, 20 , 20" FontWeight="DemiBold">Со скидкой</CheckBox>
+                </StackPanel>
+                <TextBlock Name="tbCount" Margin="20, 10, 20, 0" HorizontalAlignment="Center"></TextBlock>
+                <Button HorizontalAlignment="Left" Margin="5, 10, 0, 0" Height="34" Width="40" VerticalAlignment="Top" Name="btnCreateProduct" Click="btnCreateProduct_Click" Padding="0, 0, 0, 5" FontWeight="Bold">+</Button>
+            </StackPanel>-->
+
+
+            <ListView Name="listProduct" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Margin="0,10,0,0">
+                <!--<ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel HorizontalAlignment="Center"></WrapPanel>
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>-->
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Border Padding="5" CornerRadius="1" BorderThickness="2" Background="{Binding DiscountColor}" BorderBrush="Black">
+                            <Grid Name="gridProduct" Height="160">
+                                <StackPanel Orientation="Horizontal">
+                                    <Border BorderThickness="2" BorderBrush="Black" Margin="0,0,10,0">
+                                       <Image Width="140" Height="100"></Image> 
+                                    </Border>
+                                    
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding Title}" FontWeight="DemiBold"/>
+                                        
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock x:Name="PriseDiscount" Margin="0,0,10,0" TextDecorations="Strikethrough" Uid="{Binding ID}" Loaded="PriseDiscount_Loaded"></TextBlock>
+                                            <TextBlock Name="PricePT" TextWrapping="Wrap" Uid="{Binding ID}"  Loaded="PricePT_Loaded"/>
+                                        </StackPanel>
+                                        
+                                        <TextBlock Name="DiscountPT" TextWrapping="Wrap" Uid="{Binding ID}" Loaded="DiscountPT_Loaded"/>
+                                        
+                                        <StackPanel Orientation="Horizontal">
+                                            <Button Uid="{Binding ID}" Height="30" Width="140" Content="Редактировать" Name="btnupdate" ></Button>
+                                            <Button Uid="{Binding ID}" Height="30" Margin="0" Width="140" Content="Удалить"></Button>
+                                        </StackPanel>
+                                        
+                                    </StackPanel>
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackPanel>
+    </Grid>
+</Page>
