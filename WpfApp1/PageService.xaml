@@ -32,7 +32,7 @@
             </StackPanel>-->
 
 
-            <ListView Name="listProduct" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Margin="0,10,0,0">
+            <ListView Name="listProduct" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Margin="0,10,0,0" HorizontalContentAlignment="Stretch">
                 <!--<ListView.ItemsPanel>
                     <ItemsPanelTemplate>
                         <WrapPanel HorizontalAlignment="Center"></WrapPanel>
@@ -41,10 +41,10 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <Border Padding="5" CornerRadius="1" BorderThickness="2" Background="{Binding DiscountColor}" BorderBrush="Black">
-                            <Grid Name="gridProduct" Height="160">
+                            <Grid Name="gridProduct">
                                 <StackPanel Orientation="Horizontal">
                                     <Border BorderThickness="2" BorderBrush="Black" Margin="0,0,10,0">
-                                       <Image Width="140" Height="100"></Image> 
+                                       <Image Width="120" Height="100"></Image> 
                                     </Border>
                                     
                                     <StackPanel>
